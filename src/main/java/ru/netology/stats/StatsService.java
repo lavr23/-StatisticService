@@ -10,6 +10,7 @@ public class StatsService {
     }
 
     public int findAverage(int[] sales) {
+
         return calculateSumSales(sales) / sales.length;
     }
 
@@ -41,9 +42,10 @@ public class StatsService {
 
     public int findBelowAverage(int[] sales) {
         int belowAverage = 0;
+        int average = findAverage(sales);
         for (int sale : sales) {
-            if (sale < findAverage(sales)) {
-                belowAverage ++;
+            if (sale < average) {
+                belowAverage++;
             }
         }
         return belowAverage;
@@ -51,13 +53,13 @@ public class StatsService {
 
     public int findAboveAverage(int[] sales) {
         int aboveAverage = 0;
+        int average = findAverage(sales);
         for (int sale : sales) {
-            if (sale < findAverage(sales)) {
-                aboveAverage ++;
+            if (sale > average) {
+                aboveAverage++;
             }
         }
         return aboveAverage;
     }
 
 }
-
